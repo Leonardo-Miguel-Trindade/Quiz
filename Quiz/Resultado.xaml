@@ -3,10 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Quiz.Resultado"
              Title="Resultado">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="24"
+                             Spacing="24"
+                             MaximumWidthRequest="700"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
+
+            <Label x:Name="lblEmoji"
+                   Text="🏆"
+                   FontSize="64"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Quiz finalizado!"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="#512BD4"
+                   HorizontalOptions="Center" />
+            
+            <Label x:Name="lblPontuacao"
+                FontSize="48"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Label x:Name="lblMensagem"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center" />
+
+            <Button Text="Voltar ao início"
+                        HeightRequest="48"
+                        CornerRadius="12"
+                        BackgroundColor="Transparent"
+                        BorderColor="#512BD4"
+                        BorderWidth="1"
+                        TextColor="#512BD4"
+                        Clicked="OnVoltarInicioClicked" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

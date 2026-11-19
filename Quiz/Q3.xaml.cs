@@ -8,18 +8,25 @@ public partial class Q3 : ContentPage
 		InitializeComponent();
 	}
 
-    private void OnConfirmarClicked(object sender, EventArgs e)
+    private async void OnConfirmarClicked(object sender, EventArgs e)
     {
-        int resposta;
-        if (rbA.IsChecked) { resposta = 1; }
-        else if (rbB.IsChecked) { resposta = 2; }
-        else if (rbC.IsChecked) { resposta = 3; }
-        else { resposta = 4; }
-        bool isCorrect = c.checar(3, resposta);
+        if (!rbA.IsChecked && !rbB.IsChecked && !rbC.IsChecked && !rbD.IsChecked)
+        {
+            await DisplayAlert("Erro!", "Selecione uma resposta antes de confirmar.", "OK");
+        }
+        else
+        {
+            int resposta;
+            if (rbA.IsChecked) { resposta = 1; }
+            else if (rbB.IsChecked) { resposta = 2; }
+            else if (rbC.IsChecked) { resposta = 3; }
+            else { resposta = 4; }
+            bool isCorrect = c.checar(3, resposta);
 
-        c.formatar(isCorrect, new RadioButton[] { rbA, rbB, rbC, rbD }, lblResultado, resposta);
-        btnProxima.IsVisible = true;
-        btnConfirmar.IsVisible = false;
+            c.formatar(isCorrect, new RadioButton[] { rbA, rbB, rbC, rbD }, lblResultado, resposta);
+            btnProxima.IsVisible = true;
+            btnConfirmar.IsVisible = false;
+        }
     }
 
     private async void OnNextClicked(object sender, EventArgs e)

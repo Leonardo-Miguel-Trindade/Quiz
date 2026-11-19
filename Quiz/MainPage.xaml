@@ -1,17 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Quiz.MainPage">
+             x:Class="Quiz.MainPage"
+             Title="Início"
+             Shell.NavBarIsVisible="False">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+        <VerticalStackLayout Padding="24"
+                             Spacing="24"
+                             MaximumWidthRequest="700"
+                             HorizontalOptions="Center"
+                             VerticalOptions="Center">
 
-            <Button
-                Text="Começar"
-                SemanticProperties.Hint="Navigates to the first question"
-                Clicked="OnClicked" />
+            <!-- Título -->
+            <VerticalStackLayout Spacing="6">
+                <Label Text="☕"
+                       FontSize="64"
+                       HorizontalOptions="Center" />
+
+                <Label Text="Quiz de Java"
+                       FontSize="36"
+                       FontAttributes="Bold"
+                       TextColor="#512BD4"
+                       HorizontalOptions="Center" />
+
+                <Label Text="Teste seus conhecimentos sobre lógica e sintaxe do Java"
+                       FontSize="16"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <!-- Informações do quiz -->
+            <Grid ColumnDefinitions="*,*,*" ColumnSpacing="12">
+
+                <Border Grid.Column="0" Padding="12"
+                        Stroke="LightGray" StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Spacing="2">
+                        <Label Text="10" FontSize="24" FontAttributes="Bold"
+                               HorizontalOptions="Center" />
+                        <Label Text="Perguntas" FontSize="13" TextColor="Gray"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Column="1" Padding="12"
+                        Stroke="LightGray" StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Spacing="2">
+                        <Label Text="4" FontSize="24" FontAttributes="Bold"
+                               HorizontalOptions="Center" />
+                        <Label Text="Alternativas" FontSize="13" TextColor="Gray"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Grid.Column="2" Padding="12"
+                        Stroke="LightGray" StrokeThickness="1">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12" />
+                    </Border.StrokeShape>
+                    <VerticalStackLayout Spacing="2">
+                        <Label Text="1" FontSize="24" FontAttributes="Bold"
+                               HorizontalOptions="Center" />
+                        <Label Text="Correta" FontSize="13" TextColor="Gray"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+
+            <!-- Iniciar -->
+            <Button x:Name="btnIniciar"
+                    Text="Iniciar Quiz"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HeightRequest="52"
+                    CornerRadius="12"
+                    Clicked="OnIniciarClicked" />
 
         </VerticalStackLayout>
     </ScrollView>

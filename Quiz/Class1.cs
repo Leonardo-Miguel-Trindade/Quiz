@@ -9,15 +9,20 @@ namespace Quiz
 {
     public class Class1
     {
-        int pont = 0;
+        static int pont = 0;
 
-        public void adicionar()
+        public int getpont()
         {
-            pont++;
+            return pont;
+        }
+
+        public void zerarpont()
+        {
+            pont = 0;
         }
 
         public Boolean checar(int questao, int resposta)
-        {
+        { 
             if (questao == 1) { if(resposta == 3) { return true; } else { return false; } }
             else if (questao == 2) { if (resposta == 4) { return true; } else { return false; } }
             else if (questao == 3) { if (resposta == 2) { return true; } else { return false; } }
@@ -39,13 +44,13 @@ namespace Quiz
         {
             if (isCorrect)
             {
-                adicionar();
+                pont++;
                 for (int i = 0; i < rbs.Length; i++)
                 {
-                    rbs[i].TextColor = Colors.Red; 
+                    rbs[i].TextColor = Colors.LightGray;
                 }
                 rbs[resposta - 1].TextColor = Colors.Green;
-                
+
                 lblResultado.Text = "Correta!";
                 lblResultado.TextColor = Colors.Green;
 

@@ -5,7 +5,7 @@
              Title="Q6">
     <VerticalStackLayout Padding="24" Spacing="20">
         <Label x:Name="lblProgresso"
-       Text="Pergunta 1 de 10"
+       Text="Pergunta 6 de 10"
        FontSize="14"
        TextColor="Gray"
        HorizontalOptions="Center" />

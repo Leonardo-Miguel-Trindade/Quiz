@@ -7,11 +7,10 @@
             InitializeComponent();
         }
 
-        private async void OnClicked(object sender, EventArgs e)
+        private async void OnIniciarClicked(object sender, EventArgs e)
         {
             //PUSH TO NEXT PAGE
             await Navigation.PushAsync(new Q1());
         }
-
     }
 }
