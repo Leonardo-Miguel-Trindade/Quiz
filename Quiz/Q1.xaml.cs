@@ -17,38 +17,15 @@ public partial class Q1 : ContentPage
 
     private void OnConfirmarClicked(object sender, EventArgs e)
     {
-        bool isCorrect = c.checar(1, 2);
-        c.formatar(isCorrect, new RadioButton[] { rbA, rbB, rbC, rbD }, lblResultado);  
+        int resposta;
+        if (rbA.IsChecked) { resposta = 1; }
+        else if (rbB.IsChecked) { resposta = 2; }
+        else if (rbC.IsChecked) { resposta = 3; }
+        else { resposta = 4; }
+        bool isCorrect = c.checar(1, resposta);
 
-        if (rbC.IsChecked)
-        {
-            c.adicionar();
-            
-
-            lblResultado.Text = "Correta!";
-            lblResultado.TextColor = Colors.Green;
-
-            rbA.IsEnabled = false;
-            rbB.IsEnabled = false;
-            rbC.IsEnabled = false;
-            rbD.IsEnabled = false;
-
-            btnProxima.IsVisible = true;
-        }
-        else
-        {
-            rbA.TextColor = Colors.Red;
-            rbB.TextColor = Colors.Red;
-            rbC.TextColor = Colors.Green;
-            rbD.TextColor = Colors.Red;
-
-            lblResultado.Text = "Errada!";
-            lblResultado.TextColor = Colors.Red;
-            rbA.IsEnabled = false;
-            rbB.IsEnabled = false;
-            rbC.IsEnabled = false;
-            rbD.IsEnabled = false;
-            btnProxima.IsVisible = true;
-        }
+        c.formatar(isCorrect, new RadioButton[] { rbA, rbB, rbC, rbD }, lblResultado, resposta);
+        btnProxima.IsVisible = true;
+        btnConfirmar.IsVisible = false;
     }
 }

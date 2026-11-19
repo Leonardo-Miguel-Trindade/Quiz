@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Quiz.Q4"
              Title="Q4">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="24" Spacing="20">
         <Label x:Name="lblProgresso"
        Text="Pergunta 1 de 10"
        FontSize="14"
@@ -19,17 +19,18 @@
                 <RoundRectangle CornerRadius="12" />
             </Border.StrokeShape>
             <Label x:Name="lblPergunta"
-           Text="If e esle é um algorítimo de:"
+           Text="Qual instrução é utilizada em Java para interromper completamente a execução de um laço de repetição (for ou while), saindo do 
+escopo do loop imediatamente?"
            FontSize="20"
            FontAttributes="Bold"
            HorizontalTextAlignment="Center" />
         </Border>
 
         <VerticalStackLayout Spacing="6">
-            <RadioButton x:Name="rbA" GroupName="alternativas" Content="Loop" />
-            <RadioButton x:Name="rbB" GroupName="alternativas" Content="Repetição" />
-            <RadioButton x:Name="rbC" GroupName="alternativas" Content="Condição" />
-            <RadioButton x:Name="rbD" GroupName="alternativas" Content="Vetores" />
+            <RadioButton x:Name="rbA" GroupName="alternativas" Content="continue" />
+            <RadioButton x:Name="rbB" GroupName="alternativas" Content="return" />
+            <RadioButton x:Name="rbC" GroupName="alternativas" Content="skip" />
+            <RadioButton x:Name="rbD" GroupName="alternativas" Content="break" />
         </VerticalStackLayout>
         <Label x:Name="lblResultado"
        FontSize="16"

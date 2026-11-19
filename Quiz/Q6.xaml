@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Quiz.Q6"
              Title="Q6">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="24" Spacing="20">
         <Label x:Name="lblProgresso"
        Text="Pergunta 1 de 10"
        FontSize="14"
@@ -19,17 +19,17 @@
                 <RoundRectangle CornerRadius="12" />
             </Border.StrokeShape>
             <Label x:Name="lblPergunta"
-           Text="If e esle é um algorítimo de:"
+           Text="Qual das seguintes opções declara corretamente uma variável inteira chamada idade com o valor 25 em Java?"
            FontSize="20"
            FontAttributes="Bold"
            HorizontalTextAlignment="Center" />
         </Border>
 
         <VerticalStackLayout Spacing="6">
-            <RadioButton x:Name="rbA" GroupName="alternativas" Content="Loop" />
-            <RadioButton x:Name="rbB" GroupName="alternativas" Content="Repetição" />
-            <RadioButton x:Name="rbC" GroupName="alternativas" Content="Condição" />
-            <RadioButton x:Name="rbD" GroupName="alternativas" Content="Vetores" />
+            <RadioButton x:Name="rbA" GroupName="alternativas" Content="int idade = 25;" />
+            <RadioButton x:Name="rbB" GroupName="alternativas" Content="integer idade = 25;" />
+            <RadioButton x:Name="rbC" GroupName="alternativas" Content="num idade = 25;" />
+            <RadioButton x:Name="rbD" GroupName="alternativas" Content="var int idade = 25;" />
         </VerticalStackLayout>
         <Label x:Name="lblResultado"
        FontSize="16"

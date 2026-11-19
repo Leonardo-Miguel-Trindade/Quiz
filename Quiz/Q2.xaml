@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Quiz.Q2"
              Title="Q2">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="24" Spacing="20">
         <Label x:Name="lblProgresso"
        Text="Pergunta 1 de 10"
        FontSize="14"
@@ -19,17 +19,18 @@
                 <RoundRectangle CornerRadius="12" />
             </Border.StrokeShape>
             <Label x:Name="lblPergunta"
-           Text="If e esle é um algorítimo de:"
+           Text="Como é chamada a estrutura de repetição em Java que garante que o bloco
+de código interno seja executado pelo menos uma vez, avaliando a condição apenas no final?"
            FontSize="20"
            FontAttributes="Bold"
            HorizontalTextAlignment="Center" />
         </Border>
 
         <VerticalStackLayout Spacing="6">
-            <RadioButton x:Name="rbA" GroupName="alternativas" Content="Loop" />
-            <RadioButton x:Name="rbB" GroupName="alternativas" Content="Repetição" />
-            <RadioButton x:Name="rbC" GroupName="alternativas" Content="Condição" />
-            <RadioButton x:Name="rbD" GroupName="alternativas" Content="Vetores" />
+            <RadioButton x:Name="rbA" GroupName="alternativas" Content="foreach" />
+            <RadioButton x:Name="rbB" GroupName="alternativas" Content="while" />
+            <RadioButton x:Name="rbC" GroupName="alternativas" Content="for" />
+            <RadioButton x:Name="rbD" GroupName="alternativas" Content="do-while" />
         </VerticalStackLayout>
         <Label x:Name="lblResultado"
        FontSize="16"
